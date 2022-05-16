@@ -56,7 +56,18 @@ let currentItem = 0;
 // load initial item
 
 window.addEventListener('DOMContentLoaded', function (){
-  const item = reviews[currentItem];
-  img.src = item.img;
+showPerson(currentItem);
+});
 
+function showPerson(person){
+  const item = reviews[person];
+  img.src = item.img;
+  author.textContent = item.name;
+  job.textContent = item.job;
+  info.textContent = item.text;
+};
+
+prevBtn.addEventListener('click', function(){
+  currentItem++;
+  showPerson(person)
 })
